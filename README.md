@@ -38,6 +38,6 @@ You can use the following sample credentials populated by the SQL script to acce
 * `com.sams.controller`: JavaFX controllers managing the `src/main/resources/view/` FXML files.
 
 
-![alt text](<Screenshot From 2026-07-12 13-12-56.png>)
-![alt text](<Screenshot From 2026-07-12 13-18-05.png>)
-![alt text](<Screenshot From 2026-07-12 13-22-04.png>)
+![Login Screen](<screenshots/Screenshot From 2026-07-12 13-12-56.png>)
+![Admin Dashboard](<screenshots/Screenshot From 2026-07-12 13-18-05.png>)
+![Student Management](<screenshots/Screenshot From 2026-07-12 13-22-04.png>)
