@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.sams.controller.AttendanceReportsController" spacing="15">
+    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+    
+    <Label text="Attendance Reports" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+    
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Label text="Filter by Student:"/>
+        <ComboBox fx:id="studentComboBox" prefWidth="200"/>
+        
+        <Label text="Filter by Course:"/>
+        <ComboBox fx:id="courseComboBox" prefWidth="200"/>
+        
+        <Button text="Generate Report" onAction="#handleGenerateReport" style="-fx-font-weight: bold;"/>
+        <Button text="Clear Filters" onAction="#handleClearFilters"/>
+    </HBox>
+    
+    <TableView fx:id="reportTable" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colDate" text="Date" prefWidth="100"/>
+            <TableColumn fx:id="colCourse" text="Course" prefWidth="120"/>
+            <TableColumn fx:id="colSubject" text="Subject" prefWidth="150"/>
+            <TableColumn fx:id="colStudent" text="Student" prefWidth="150"/>
+            <TableColumn fx:id="colStatus" text="Status" prefWidth="100"/>
+            <TableColumn fx:id="colRemarks" text="Remarks" prefWidth="150"/>
+        </columns>
+    </TableView>
+</VBox>
