@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.sams.controller.LecturerManagementController" spacing="15">
+    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+    
+    <Label text="Manage Lecturers" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+    
+    <GridPane hgap="10" vgap="10">
+        <Label text="Employee ID:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+        <TextField fx:id="empIdField" GridPane.columnIndex="1" GridPane.rowIndex="0" prefWidth="200"/>
+        
+        <Label text="Name:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+        <TextField fx:id="nameField" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+        
+        <Label text="Email:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+        <TextField fx:id="emailField" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+        <Label text="Phone:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+        <TextField fx:id="phoneField" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+    </GridPane>
+    
+    <HBox spacing="10">
+        <Button text="Add Lecturer" onAction="#handleAddLecturer"/>
+        <Button text="Update Lecturer" onAction="#handleUpdateLecturer"/>
+        <Button text="Delete Lecturer" onAction="#handleDeleteLecturer"/>
+        <Button text="Clear" onAction="#clearFields"/>
+    </HBox>
+    
+    <TableView fx:id="lecturerTable" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colId" text="ID" prefWidth="50"/>
+            <TableColumn fx:id="colEmpId" text="Emp ID" prefWidth="100"/>
+            <TableColumn fx:id="colName" text="Name" prefWidth="150"/>
+            <TableColumn fx:id="colEmail" text="Email" prefWidth="150"/>
+            <TableColumn fx:id="colPhone" text="Phone" prefWidth="150"/>
+        </columns>
+    </TableView>
+</VBox>
