@@ -29,7 +29,9 @@ You can use the following sample credentials populated by the SQL script to acce
 | Role | Username | Password |
 | :--- | :--- | :--- |
 | **Admin** | `admin` | `admin123` |
-| **Lecturer** | `lecturer_john` | `pass123` |
+| **Lecturer** | `lecturer_perera` | `pass123` |
+| **Lecturer** | `lecturer_silva` | `pass123` |
+| **Lecturer** | `lecturer_fernando` | `pass123` |
 
 ## Code Structure Highlights
 * `com.sams.entity`: Contains Hibernate entity classes mirroring database tables.
