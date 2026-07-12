@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.sams.controller.AdminDashboardController" prefWidth="1024" prefHeight="768">
+    <left>
+        <VBox spacing="10" style="-fx-padding: 20; -fx-background-color: #f4f4f4;">
+            <Label text="Admin Menu" style="-fx-font-weight: bold; -fx-font-size: 16px;"/>
+            <Button text="Manage Courses" prefWidth="150" onAction="#showCourses"/>
+            <Button text="Manage Students" prefWidth="150" onAction="#showStudents"/>
+            <Button text="Manage Lecturers" prefWidth="150" onAction="#showLecturers"/>
+            <Button text="Class Schedule" prefWidth="150" onAction="#showSchedule"/>
+            <Region VBox.vgrow="ALWAYS"/>
+            <Button text="Logout" prefWidth="150" onAction="#handleLogout"/>
+        </VBox>
+    </left>
+    <center>
+        <StackPane fx:id="contentArea" style="-fx-padding: 20;">
+            <Label text="Welcome to Admin Dashboard" style="-fx-font-size: 20px;"/>
+        </StackPane>
+    </center>
+</BorderPane>
