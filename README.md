@@ -36,3 +36,8 @@ You can use the following sample credentials populated by the SQL script to acce
 * `com.sams.dao`: Interfaces and implementations for database operations.
 * `com.sams.service`: Business logic validating and bridging UI with the DAO layer.
 * `com.sams.controller`: JavaFX controllers managing the `src/main/resources/view/` FXML files.
+
+
+![alt text](<Screenshot From 2026-07-12 13-12-56.png>)
+![alt text](<Screenshot From 2026-07-12 13-18-05.png>)
+![alt text](<Screenshot From 2026-07-12 13-22-04.png>)
