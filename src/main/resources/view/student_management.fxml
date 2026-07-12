@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.sams.controller.StudentManagementController" spacing="15">
+    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+    
+    <Label text="Manage Students" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+    
+    <GridPane hgap="10" vgap="10">
+        <Label text="Registration No:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+        <TextField fx:id="regNoField" GridPane.columnIndex="1" GridPane.rowIndex="0" prefWidth="200"/>
+        
+        <Label text="Name:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+        <TextField fx:id="nameField" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+        
+        <Label text="Email:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+        <TextField fx:id="emailField" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+        <Label text="Phone:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+        <TextField fx:id="phoneField" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+
+        <Label text="Course:" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+        <ComboBox fx:id="courseComboBox" GridPane.columnIndex="1" GridPane.rowIndex="4" prefWidth="200"/>
+    </GridPane>
+    
+    <HBox spacing="10">
+        <Button text="Add Student" onAction="#handleAddStudent"/>
+        <Button text="Update Student" onAction="#handleUpdateStudent"/>
+        <Button text="Delete Student" onAction="#handleDeleteStudent"/>
+        <Button text="Clear" onAction="#clearFields"/>
+    </HBox>
+    
+    <TableView fx:id="studentTable" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colId" text="ID" prefWidth="50"/>
+            <TableColumn fx:id="colRegNo" text="Reg No" prefWidth="100"/>
+            <TableColumn fx:id="colName" text="Name" prefWidth="150"/>
+            <TableColumn fx:id="colEmail" text="Email" prefWidth="150"/>
+            <TableColumn fx:id="colCourse" text="Course" prefWidth="150"/>
+        </columns>
+    </TableView>
+</VBox>
