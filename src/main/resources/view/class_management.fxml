@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.sams.controller.ClassManagementController" spacing="15">
+    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+    
+    <Label text="Class Schedule Management" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+    
+    <GridPane hgap="10" vgap="10">
+        <Label text="Course:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+        <ComboBox fx:id="courseComboBox" GridPane.columnIndex="1" GridPane.rowIndex="0" prefWidth="200"/>
+        
+        <Label text="Subject:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+        <ComboBox fx:id="subjectComboBox" GridPane.columnIndex="1" GridPane.rowIndex="1" prefWidth="200"/>
+        
+        <Label text="Lecturer:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+        <ComboBox fx:id="lecturerComboBox" GridPane.columnIndex="1" GridPane.rowIndex="2" prefWidth="200"/>
+
+        <Label text="Date:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+        <DatePicker fx:id="datePicker" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+
+        <Label text="Start Time (HH:mm):" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+        <TextField fx:id="startTimeField" GridPane.columnIndex="3" GridPane.rowIndex="0"/>
+
+        <Label text="End Time (HH:mm):" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+        <TextField fx:id="endTimeField" GridPane.columnIndex="3" GridPane.rowIndex="1"/>
+    </GridPane>
+    
+    <HBox spacing="10">
+        <Button text="Schedule Class" onAction="#handleAddClass"/>
+        <Button text="Update Class" onAction="#handleUpdateClass"/>
+        <Button text="Delete Class" onAction="#handleDeleteClass"/>
+        <Button text="Clear" onAction="#clearFields"/>
+    </HBox>
+    
+    <TableView fx:id="classTable" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colId" text="ID" prefWidth="50"/>
+            <TableColumn fx:id="colCourse" text="Course" prefWidth="120"/>
+            <TableColumn fx:id="colSubject" text="Subject" prefWidth="150"/>
+            <TableColumn fx:id="colLecturer" text="Lecturer" prefWidth="150"/>
+            <TableColumn fx:id="colDate" text="Date" prefWidth="100"/>
+            <TableColumn fx:id="colStartTime" text="Start Time" prefWidth="100"/>
+            <TableColumn fx:id="colEndTime" text="End Time" prefWidth="100"/>
+        </columns>
+    </TableView>
+</VBox>
