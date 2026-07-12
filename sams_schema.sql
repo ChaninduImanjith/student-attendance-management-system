@@ -74,21 +74,57 @@ CREATE TABLE IF NOT EXISTS Attendance (
     FOREIGN KEY (student_id) REFERENCES Student(student_id) ON DELETE CASCADE
 );
 
--- Sample Data
+-- ============================================================
+-- Sample Data (Sri Lankan)
+-- ============================================================
+
+-- Users
 INSERT INTO User (username, password, role) VALUES 
 ('admin', 'admin123', 'Admin'),
-('lecturer_john', 'pass123', 'Lecturer');
+('lecturer_perera', 'pass123', 'Lecturer'),
+('lecturer_silva', 'pass123', 'Lecturer'),
+('lecturer_fernando', 'pass123', 'Lecturer');
 
+-- Courses
 INSERT INTO Course (course_code, course_name, description) VALUES 
-('CS101', 'Computer Science', 'BSc in Computer Science');
+('CS101', 'Computer Science', 'BSc (Hons) in Computer Science'),
+('IT201', 'Information Technology', 'BSc (Hons) in Information Technology'),
+('SE301', 'Software Engineering', 'BSc (Hons) in Software Engineering');
 
+-- Subjects
 INSERT INTO Subject (subject_code, subject_name, course_id) VALUES 
-('PRG101', 'Programming Fundamentals', 1);
+('CS-PRG1', 'Programming Fundamentals', 1),
+('CS-DS1',  'Data Structures & Algorithms', 1),
+('IT-NET1', 'Computer Networks', 2),
+('IT-DB1',  'Database Management Systems', 2),
+('SE-SWD1', 'Software Design Patterns', 3),
+('SE-AGI1', 'Agile Methodologies', 3);
 
+-- Students
 INSERT INTO Student (registration_number, name, email, phone, course_id) VALUES 
-('REG001', 'Alice Smith', 'alice@example.com', '1234567890', 1);
+('CS2024001', 'Kavindu Lakshan Perera',    'kavindu.perera@student.ac.lk',   '0771234561', 1),
+('CS2024002', 'Sanduni Madhavi Dissanayake','sanduni.d@student.ac.lk',        '0712345678', 1),
+('CS2024003', 'Tharindu Hasantha Silva',    'tharindu.silva@student.ac.lk',   '0781234563', 1),
+('CS2024004', 'Nimesha Kaushalya Fernando', 'nimesha.fernando@student.ac.lk', '0751234564', 1),
+('IT2024001', 'Dineth Rajapaksha',          'dineth.r@student.ac.lk',         '0761234565', 2),
+('IT2024002', 'Piyumi Dilhara Jayasinghe',  'piyumi.j@student.ac.lk',         '0771234566', 2),
+('IT2024003', 'Sachith Maduranga Bandara',  'sachith.b@student.ac.lk',        '0711234567', 2),
+('SE2024001', 'Dilshan Pradeep Ranasinghe', 'dilshan.r@student.ac.lk',        '0721234568', 3),
+('SE2024002', 'Anushka Nethmi Wickramasinghe','anushka.w@student.ac.lk',      '0781234569', 3),
+('SE2024003', 'Thisara Maduwantha Gamage',  'thisara.g@student.ac.lk',        '0751234570', 3);
 
+-- Lecturers
 INSERT INTO Lecturer (employee_id, name, email, phone, user_id) VALUES 
-('EMP001', 'John Doe', 'john@example.com', '0987654321', 2);
+('EMP001', 'Dr. Chaminda Perera',   'c.perera@university.ac.lk',   '0112345671', 2),
+('EMP002', 'Ms. Rashmi Silva',      'r.silva@university.ac.lk',    '0112345672', 3),
+('EMP003', 'Mr. Lasantha Fernando', 'l.fernando@university.ac.lk', '0112345673', 4);
 
-INSERT INTO Lecturer_Subject (lecturer_id, subject_id) VALUES (1, 1);
+-- Lecturer-Subject Assignments
+INSERT INTO Lecturer_Subject (lecturer_id, subject_id) VALUES 
+(1, 1), -- Dr. Perera -> Programming Fundamentals
+(1, 2), -- Dr. Perera -> Data Structures
+(2, 3), -- Ms. Silva  -> Computer Networks
+(2, 4), -- Ms. Silva  -> Database Management
+(3, 5), -- Mr. Fernando -> Software Design Patterns
+(3, 6); -- Mr. Fernando -> Agile Methodologies
+
