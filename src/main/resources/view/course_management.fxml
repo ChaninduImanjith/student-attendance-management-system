@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.sams.controller.CourseManagementController" spacing="15">
+    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+    
+    <Label text="Manage Courses" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+    
+    <GridPane hgap="10" vgap="10">
+        <Label text="Course Code:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+        <TextField fx:id="codeField" GridPane.columnIndex="1" GridPane.rowIndex="0" prefWidth="250"/>
+        
+        <Label text="Course Name:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+        <TextField fx:id="nameField" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+        
+        <Label text="Description:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+        <TextField fx:id="descField" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+    </GridPane>
+    
+    <HBox spacing="10">
+        <Button text="Add Course" onAction="#handleAddCourse"/>
+        <Button text="Update Course" onAction="#handleUpdateCourse"/>
+        <Button text="Delete Course" onAction="#handleDeleteCourse"/>
+        <Button text="Clear" onAction="#clearFields"/>
+    </HBox>
+    
+    <TableView fx:id="courseTable" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colId" text="ID" prefWidth="50"/>
+            <TableColumn fx:id="colCode" text="Code" prefWidth="100"/>
+            <TableColumn fx:id="colName" text="Name" prefWidth="200"/>
+            <TableColumn fx:id="colDesc" text="Description" prefWidth="250"/>
+        </columns>
+    </TableView>
+</VBox>
