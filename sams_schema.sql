@@ -75,7 +75,7 @@ CREATE TABLE IF NOT EXISTS Attendance (
 );
 
 -- ============================================================
--- Sample Data (Sri Lankan)
+-- Sample Data
 -- ============================================================
 
 -- Users
